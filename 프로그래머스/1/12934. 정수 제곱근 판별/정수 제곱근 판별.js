@@ -1,3 +1,6 @@
 function solution(n) {
-return Number.isInteger(Math.sqrt(n))? (Math.sqrt(n)+1)*(Math.sqrt(n)+1) : -1
+    let result = 0;
+    n = Math.sqrt(n);
+    result = Number.isInteger(n) ? Math.pow(n+1, 2) : -1;
+    return result;
 }
