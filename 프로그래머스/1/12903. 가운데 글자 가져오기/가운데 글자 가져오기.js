@@ -1,4 +1,3 @@
-function solution(s) {
-     
-    return s.length%2 == 0? s[s.length/2-1]+s[s.length/2]:s[Math.floor(s.length/2)]
+function solution(s,mid = s.length/2) {
+return s.length%2 == 0? s[mid-1]+s[mid]:s[Math.floor(mid)]
 }
