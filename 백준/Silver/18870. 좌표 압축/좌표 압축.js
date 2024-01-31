@@ -10,14 +10,13 @@ const coords = X.split(" ").map(Number);
 let result = new Object();
 let answer = "";
 
-const arr = Array.from(new Set(coords)).sort((a, b) => a - b);
-
-for (let i = 0; i < arr.length; i++) {
-  result[arr[i]] = i;
-}
+Array.from(new Set(coords))
+  .sort((a, b) => a - b)
+  .forEach((el, i) => (result[el] = i));
 
 for (const el of coords) {
   answer += result[el] + " ";
 }
 
 console.log(answer);
+
