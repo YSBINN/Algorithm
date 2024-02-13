@@ -6,9 +6,8 @@ function solution(answers) {
     ];
 
     const scores = patterns.map((pattern) => 
-        answers.filter((answer, index) => answer === pattern[index % pattern.length]).length
+        answers.filter((answer, index) =>  answer === pattern[index % pattern.length]).length
     );
-
     const maxScore = Math.max(...scores);
 
     const result = scores.reduce((acc, score, index) => {
