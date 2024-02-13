@@ -1,5 +1,5 @@
 function solution(nums) {
-return findAllCombinations(nums).filter(e=>isDecimal(e)).length
+return findAllCombinations(nums).filter(e=>isPrime(e)).length
 }
 
 function findAllCombinations(arr) {
@@ -14,10 +14,10 @@ function findAllCombinations(arr) {
 
     return combinations.map((e)=>e.reduce((acc,cur)=>acc+cur));
 }
-function isDecimal (num){
-    let count = 0;
-        for(j=2;j<num;j++){
-            if(num%j===0)count++
-        }
-    return count ? false:true
+function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
 }
