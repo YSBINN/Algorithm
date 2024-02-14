@@ -1,11 +1,9 @@
 function solution(n, m, section) {
-    let count = 0;
-    let paint = 0;
-    section.forEach(el=>{
-        if(el>paint){
-            count++;
-            paint = el+m-1;
+    return section.reduce((acc, cur) => {
+        if (cur > acc.paint) {
+            acc.count++;
+            acc.paint = cur + m - 1;
         }
-    })
-    return count;
+        return acc;
+    }, { count: 0, paint: 0 }).count;
 }
