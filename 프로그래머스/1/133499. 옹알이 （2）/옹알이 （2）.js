@@ -1,16 +1,12 @@
-function solution(babbling) {
-  const patterns = ['aya', 'ye', 'woo', 'ma'];
-
+const solution = babbling => {
+  const patternList = ["aya", "ye", "woo", "ma"];
   return babbling.filter(babble => {
-      for (let pattern of patterns) {
-          if (babble.includes(pattern.repeat(2))) {
-              return false;
-          }
-      }
-
-      let modifiedBabble = patterns.reduce((acc, pattern) => {
-          return acc.split(pattern).join(" ");
-      }, babble).trim();
-      return modifiedBabble.split(" ").join("").length === 0;
+    let str = babble;
+    for (const pattern of patternList) {
+      if (babble.includes(pattern.repeat(2))) return false;
+      str = str.split(pattern).join(" ").trim();
+      console.log(str);
+      if (str.length === 0) return true;
+    }
   }).length;
-}
+};
