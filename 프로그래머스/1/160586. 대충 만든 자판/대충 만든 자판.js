@@ -1,14 +1,3 @@
-
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
 function solution(keymap, targets) {
     const answer = [];
     const map = {}
