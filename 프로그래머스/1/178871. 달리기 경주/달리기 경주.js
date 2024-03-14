@@ -1,18 +1,18 @@
 function solution(players, callings) {
-  const pMap = new Map();
+  const pMap = {};
 
   players.forEach((name, index) => {
-    pMap.set(name, index);
+    pMap[name] = index;
   });
 
   callings.forEach(name => {
-    const cur = pMap.get(name);
+    const cur = pMap[name];
     const prev = players[cur - 1];
 
     [players[cur], players[cur - 1]] = [players[cur - 1], players[cur]];
 
-    pMap.set(name, pMap.get(name) - 1);
-    pMap.set(prev, pMap.get(name) + 1);
+    pMap[name]--;
+    pMap[prev]++;
   });
 
   return players;
